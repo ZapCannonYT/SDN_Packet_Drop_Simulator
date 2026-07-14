@@ -4,9 +4,13 @@
 Simulate selective packet dropping using SDN flow rules with Mininet and a Ryu OpenFlow controller. The controller installs a high-priority drop rule for a specific IP address, demonstrating how SDN can programmatically control network traffic at the flow level.
 
 ## Topology
-h1 (10.0.0.1) --- s1 --- h2 (10.0.0.2)
-                   |
-              Ryu Controller (port 6633)
+
+```text
+h1 (10.0.0.1) ---- s1 ---- h2 (10.0.0.2)
+                     |
+                     |
+          Ryu Controller (Port 6633)
+```
 
 ## SDN Logic
 - Default rule (priority 0): Send all unmatched packets to controller
@@ -82,19 +86,19 @@ Expected: Drop rule for 10.0.0.1 reinstalls automatically on every controller re
 ## Proof of Execution
 
 ### Ping Tests + Flow Table
-![Ping and Flow Table](cn_orange_1.png)
+![Ping and Flow Table](images/cn_orange_1.png)
 
 ### Ryu Controller - Drop Rule Installed
-![Ryu Controller](cn_orange_2.png)
+![Ryu Controller](images/cn_orange_2.png)
 
 ### iperf Throughput Measurement
-![iperf Output](cn_orange_3.png)
+![iperf Output](images/cn_orange_3.png)
 
 ### Regression Test - Before Restart
-![Flow Table Before](cn_orange_4.png)
+![Flow Table Before](images/cn_orange_4.png)
 
 ### Regression Test - After Restart
-![Flow Table After](cn_orange_5.png)
+![Flow Table After](images/cn_orange_5.png)
 
 ## References
 - Mininet: https://mininet.org
